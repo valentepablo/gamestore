@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+:root {
+  --color-100: #efeff1;
+  --color-700: #1f1f23;
+  --color-800: #18181b;
+  --color-900: #0e0e10;
+  --color-accent-100: #37b6ef;
+  --color-hover: #454548;
+  --color-hover2: #1e293b;
+
+  --font-size-14: 0.875rem;
+  --font-size-18: 1.125rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-36: 2.25rem;
+
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-extrabold: 800;
+
+  --space-1: 0.625rem;
+  --space-2: 0.9375rem;
+  --space-3: 1.25rem;
+  --space-4: 1.5625rem;
+  --space-5: 1.875rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  color: var(--color-100);
+  background-color: var(--color-900);
+
+  font-size: var(--font-size-14);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
+  cursor: pointer;
+}
+
+/********** NAVBAR **********/
+
+.header {
+  background-color: var(--color-800);
+}
+
+.navbar {
+  padding: var(--space-1) var(--space-2);
+  margin: 0 auto;
+
+  max-width: 1440px;
+
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.nav-list {
+  list-style: none;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: var(--space-5);
 }
 
-.App-link {
-  color: #61dafb;
+.nav-list a {
+  color: inherit;
+
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-list a:hover {
+  color: var(--color-accent-100);
 }
+
+/********** NAVBAR **********/
+
+/********** CART WIDGET **********/
+
+.cart-widget {
+  cursor: pointer;
+  font-size: var(--font-size-20);
+}
+
+.cart-widget:hover {
+  color: var(--color-accent-100);
+}
+
+/********** CART WIDGET **********/
+
+/********** ITEM LIST CONTAINER **********/
+
+.item-list-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 700px;
+}
+
+.item-list-container p {
+  font-size: var(--font-size-36);
+  font-weight: var(--font-weight-extrabold);
+}
+
+/********** ITEM LIST CONTAINER **********/

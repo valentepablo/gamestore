@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "title": "World of Warcraft",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 50,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/18122-285x380.jpg",
+    "category": "adventure"
+  },
+  {
+    "id": 2,
+    "title": "Minecraft",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 30,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/27471_IGDB-285x380.jpg",
+    "category": "survival"
+  },
+  {
+    "id": 3,
+    "title": "New World",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 50,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/493597_IGDB-285x380.jpg",
+    "category": "adventure"
+  },
+  {
+    "id": 4,
+    "title": "Escape from Tarkov",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 40,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/491931_IGDB-285x380.jpg",
+    "category": "shooter"
+  },
+  {
+    "id": 5,
+    "title": "Cyberpunk 2077",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 55,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/65876_IGDB-285x380.jpg",
+    "category": "adventure"
+  },
+  {
+    "id": 6,
+    "title": "Rust",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 45,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/263490_IGDB-285x380.jpg",
+    "category": "shooter"
+  },
+  {
+    "id": 7,
+    "title": "Grand Theft Auto 6",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 50,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/32982_IGDB-285x380.jpg",
+    "category": "action"
+  },
+  {
+    "id": 8,
+    "title": "Elden Ring",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 60,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/512953_IGDB-285x380.jpg",
+    "category": "action"
+  },
+  {
+    "id": 9,
+    "title": "FIFA 23",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 50,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/1745202732_IGDB-285x380.jpg",
+    "category": "sport"
+  },
+  {
+    "id": 10,
+    "title": "Sea of Thieves",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 45,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/490377-285x380.jpg",
+    "category": "survival"
+  },
+  {
+    "id": 11,
+    "title": "Dead Red Redemption 2",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 40,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/493959_IGDB-285x380.jpg",
+    "category": "adventure"
+  },
+  {
+    "id": 12,
+    "title": "Stardew Valley",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 15,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/490744_IGDB-285x380.jpg",
+    "category": "survival"
+  },
+  {
+    "id": 13,
+    "title": "Assassin's Creed Valhalla",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 45,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/517330_IGDB-285x380.jpg",
+    "category": "adventure"
+  },
+  {
+    "id": 14,
+    "title": "Hollow Knight",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 25,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/490147_IGDB-285x380.jpg",
+    "category": "adventure"
+  },
+  {
+    "id": 15,
+    "title": "Diablo 3",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 30,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/313558_IGDB-285x380.jpg",
+    "category": "action"
+  },
+  {
+    "id": 16,
+    "title": "Terraria",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 20,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/31376_IGDB-285x380.jpg",
+    "category": "survival"
+  },
+  {
+    "id": 17,
+    "title": "Bloodborne",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 35,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/460636_IGDB-285x380.jpg",
+    "category": "action"
+  },
+  {
+    "id": 18,
+    "title": "The Last Of Us",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quaerat inventore ad eligendi perferendis sapiente reprehenderit, sequi possimus placeat unde?",
+    "price": 45,
+    "pictureUrl": "https://static-cdn.jtvnw.net/ttv-boxart/294724507_IGDB-285x380.jpg",
+    "category": "action"
+  }
+]

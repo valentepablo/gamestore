@@ -1,4 +1,4 @@
-import logo from './gamestore-logo.png';
+import logo from '../../gamestore-logo.png';
 
 const Logo = () => {
   return <img className="logo" src={logo} alt="gamestore logo" />;

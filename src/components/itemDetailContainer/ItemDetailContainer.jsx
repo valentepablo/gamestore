@@ -22,10 +22,10 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div className='item-detail-container'>
+    <div className=''>
       {loading ? (
-        <div className='loader-container'>
-          <img src={loader} className='loader' alt='loading spinner while searching in database' />
+        <div className='flex flex-col items-center justify-center gap-6 my-6'>
+          <img src={loader} className='w-12' alt='loading spinner while searching in database' />
           <p>Cargando...</p>
         </div>
       ) : (

@@ -17,26 +17,33 @@ const ItemDetail = ({ product }) => {
   }, [amount]);
 
   return (
-    <div className='item-detail'>
-      <div className='item-detail-images'>
-        <img src={product.pictureUrl} alt={product.title} />
-        <div className='item-detail-images-all'></div>
+    <div className='p-4 md:mt-12 md:max-w-4xl md:mx-auto md:grid md:grid-cols-2 md:gap-6'>
+      <div className=''>
+        <img className='w-full' src={product.pictureUrl} alt={product.title} />
       </div>
-      <div className='item-detail-panel'>
-        <div className='item-detail-info'>
-          <h4>{product.title}</h4>
-          <p>{product.description}</p>
-          <span className='item-detail-info-price'>$ {product.price}</span>
+      <div className='py-2'>
+        <div>
+          <h4 className='font-extrabold tracking-widest uppercase text-md text-zinc-500 md:text-2xl'>
+            {product.title}
+          </h4>
+          <p className='mt-2 md:mt-6 text-zinc-300 md:text-lg'>{product.description}</p>
+          <span className='block my-2 text-3xl font-extrabold md:text-5xl md:my-8 text-sky-500'>
+            $ {product.price}
+          </span>
         </div>
-        <div className='item-detail-item-count'>
+        <div>
           {amount === 0 ? (
             <ItemCount onAdd={onAdd} />
           ) : (
             <>
-              <Link to='/' className='ver-juegos-btn-invert text-center'>
+              <Link
+                to='/'
+                className='block w-full p-4 mt-6 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 rounded-md md:mt-16 border-sky-500 text-sky-500 hover:bg-sky-600 hover:text-zinc-800 hover:border-transparent'>
                 Ver mas juegos
               </Link>
-              <Link to='/cart' className='add-item-button text-center'>
+              <Link
+                to='/cart'
+                className='block w-full p-4 mt-2 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
                 Finalizar compra
               </Link>
             </>

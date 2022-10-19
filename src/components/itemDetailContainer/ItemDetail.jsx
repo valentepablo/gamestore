@@ -44,7 +44,7 @@ const ItemDetail = ({ product }) => {
               <Link
                 to='/cart'
                 className='block w-full p-4 mt-2 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
-                Finalizar compra
+                Ir al carrito
               </Link>
             </>
           )}

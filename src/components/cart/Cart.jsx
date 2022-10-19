@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CartContext from '../../contexts/CartContext';
+import CheckoutForm from './CheckoutForm';
 
 const Cart = () => {
   const { products, removeItems, removeItem, clearCart, getCartTotalPrice } =
     useContext(CartContext);
+
+  const [formOpen, setFormOpen] = useState(false);
 
   const handleRemoveItem = (id) => {
     removeItems(id);
@@ -16,6 +19,21 @@ const Cart = () => {
 
   const handleClearCart = () => {
     clearCart();
+  };
+
+  const handleGenerateOrder = (formData) => {
+    const newOrder = {
+      buyer: formData,
+      items: products.map((product) => ({
+        id: product.id,
+        title: product.name,
+        price: product.price,
+      })),
+      total: products.reduce((acc, product) => acc + product.price * product.quantity, 0),
+    };
+
+    console.log(newOrder);
+    return newOrder;
   };
 
   return (
@@ -101,6 +119,24 @@ const Cart = () => {
                 </div>
               </div>
             ))}
+            <button
+              onClick={() => setFormOpen(!formOpen)}
+              className='w-full p-4 mt-2 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md md:mt-8 md:mx-auto md:w-80 text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
+              Generar orden de compra
+            </button>
+
+            <div
+              className={
+                formOpen
+                  ? 'absolute grid place-items-center  inset-0 z-40  md:backdrop-blur md:backdrop-brightness-50 md:backdrop-grayscale'
+                  : ''
+              }>
+              <CheckoutForm
+                isOpen={formOpen}
+                setIsOpen={setFormOpen}
+                handleGenerateOrder={handleGenerateOrder}
+              />
+            </div>
           </div>
         </>
       ) : (

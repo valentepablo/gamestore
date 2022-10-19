@@ -15,7 +15,6 @@ const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen }) => {
   };
 
   return (
-    // {absolute left-0 top-0 z-50}
     <div
       className={
         isOpen
@@ -24,7 +23,7 @@ const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen }) => {
       }>
       <div className='md:w-full md:mx-auto'>
         <button
-          className='flex items-center py-1 pr-2 mb-8 text-sm font-extrabold tracking-wide uppercase transition rounded-md bg-sky-400 text-sky-800 hover:bg-sky-500'
+          className='flex items-center py-1 pr-2 mb-8 text-sm font-extrabold tracking-wide uppercase transition rounded-md select-none bg-sky-400 text-sky-800 hover:bg-sky-500'
           onClick={() => setIsOpen(!isOpen)}>
           <svg
             className='w-6 h-6'
@@ -82,7 +81,7 @@ const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen }) => {
           </div>
           <button
             type='submit'
-            className='w-full p-4 mt-10 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md md:mt-12 text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
+            className='w-full p-4 mt-10 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md select-none md:mt-12 text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
             Finalizar compra
           </button>
         </form>

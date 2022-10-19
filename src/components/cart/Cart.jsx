@@ -68,7 +68,7 @@ const Cart = () => {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 gap-6 mt-6 md:mb-4'>
+          <div className={formOpen ? 'hidden' : 'grid grid-cols-1 gap-6 mt-6 md:mb-4'}>
             {products.map((product) => (
               <div key={product.id} className='flex items-center gap-4 md:gap-6'>
                 <img
@@ -124,19 +124,18 @@ const Cart = () => {
               className='w-full p-4 mt-2 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md md:mt-8 md:mx-auto md:w-80 text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
               Generar orden de compra
             </button>
-
-            <div
-              className={
-                formOpen
-                  ? 'absolute grid place-items-center  inset-0 z-40  md:backdrop-blur md:backdrop-brightness-50 md:backdrop-grayscale'
-                  : ''
-              }>
-              <CheckoutForm
-                isOpen={formOpen}
-                setIsOpen={setFormOpen}
-                handleGenerateOrder={handleGenerateOrder}
-              />
-            </div>
+          </div>
+          <div
+            className={
+              formOpen
+                ? 'absolute grid place-items-center inset-0 z-40  md:backdrop-blur md:backdrop-brightness-50  md:backdrop-grayscale'
+                : ''
+            }>
+            <CheckoutForm
+              isOpen={formOpen}
+              setIsOpen={setFormOpen}
+              handleGenerateOrder={handleGenerateOrder}
+            />
           </div>
         </>
       ) : (

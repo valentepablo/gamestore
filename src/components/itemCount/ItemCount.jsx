@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 
-const ItemCount = ({ onAdd }) => {
+const ItemCount = ({ onAdd, stock }) => {
   const [itemQuantity, setItemQuantity] = useState(1);
 
   const decreaseQuantity = () => {
+    if (itemQuantity === 1) return;
     setItemQuantity(itemQuantity - 1);
   };
   const increaseQuantity = () => {
+    if (itemQuantity === stock) return;
     setItemQuantity(itemQuantity + 1);
   };
 

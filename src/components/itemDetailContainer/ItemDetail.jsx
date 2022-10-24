@@ -30,10 +30,11 @@ const ItemDetail = ({ product }) => {
           <span className='block my-2 text-3xl font-extrabold md:text-5xl md:my-8 text-sky-500'>
             $ {product.price}
           </span>
+          <p className='text-sm text-zinc-600'>Stock disponible: {product.stock}</p>
         </div>
         <div>
           {amount === 0 ? (
-            <ItemCount onAdd={onAdd} />
+            <ItemCount onAdd={onAdd} stock={product.stock} />
           ) : (
             <>
               <Link

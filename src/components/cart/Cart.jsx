@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CartContext from '../../contexts/CartContext';
 import CheckoutForm from './CheckoutForm';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
 const Cart = () => {
   const { products, removeItems, removeItem, clearCart, getCartTotalPrice } =
@@ -32,8 +33,10 @@ const Cart = () => {
       total: products.reduce((acc, product) => acc + product.price * product.quantity, 0),
     };
 
-    console.log(newOrder);
-    return newOrder;
+    // clearCart();
+
+    const db = getFirestore();
+    addDoc(collection(db, 'orders'), newOrder);
   };
 
   return (
@@ -135,6 +138,7 @@ const Cart = () => {
               isOpen={formOpen}
               setIsOpen={setFormOpen}
               handleGenerateOrder={handleGenerateOrder}
+              clearCart={clearCart}
             />
           </div>
         </>

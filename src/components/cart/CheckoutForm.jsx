@@ -1,13 +1,22 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
-const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen, clearCart }) => {
-  const [orderSent, setOrderSent] = useState(false);
+const CheckoutForm = ({
+  handleGenerateOrder,
+  isOpen,
+  setIsOpen,
+  clearCart,
+  orderSent,
+  setOrderSent,
+}) => {
   const nameRef = useRef();
   const emailRef = useRef();
+  const emailRef2 = useRef();
   const phoneRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (emailRef.current.value !== emailRef2.current.value) return;
+
     handleGenerateOrder({
       name: nameRef.current.value,
       email: emailRef.current.value,
@@ -21,6 +30,14 @@ const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen, clearCart }) => 
     }, 3000);
   };
 
+  const handleEmailValidation = () => {
+    if (emailRef.current.value === emailRef2.current.value) {
+      document.querySelector('.error-msg').classList.add('hidden');
+    } else {
+      document.querySelector('.error-msg').classList.remove('hidden');
+    }
+  };
+
   return (
     <div
       className={
@@ -29,7 +46,9 @@ const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen, clearCart }) => 
           : 'hidden'
       }>
       <div className='md:w-full md:mx-auto'>
-        {!orderSent ? (
+        {orderSent ? (
+          <div className='font-semibold text-center'>Tu compra ha sido realizada con exito!</div>
+        ) : (
           <>
             <button
               className='flex items-center py-1 pr-2 mb-8 text-sm font-extrabold tracking-wide uppercase transition rounded-md select-none bg-sky-400 text-sky-800 hover:bg-sky-500'
@@ -77,6 +96,24 @@ const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen, clearCart }) => 
                   className='w-full px-4 py-4 text-lg rounded-md outline-none text-zinc-400 hover:bg-zinc-800/60 bg-zinc-800/40'
                 />
               </div>
+              <div className='relative'>
+                <label
+                  htmlFor='email2'
+                  className='block mt-6 text-sm font-extrabold tracking-widest uppercase text-zinc-500'>
+                  Ingrese nuevamente su email
+                </label>
+                <input
+                  onChange={handleEmailValidation}
+                  ref={emailRef2}
+                  type='email'
+                  id='email2'
+                  required
+                  className='w-full px-4 py-4 text-lg rounded-md outline-none text-zinc-400 hover:bg-zinc-800/60 bg-zinc-800/40'
+                />
+                <div className='absolute mt-1 text-sm text-red-700 select-none -bottom-4.5 right-0 error-msg'>
+                  El email ingresado debe coincidir.
+                </div>
+              </div>
               <div>
                 <label
                   htmlFor='tel'
@@ -97,8 +134,6 @@ const CheckoutForm = ({ handleGenerateOrder, isOpen, setIsOpen, clearCart }) => 
               </button>
             </form>
           </>
-        ) : (
-          <p>Tu compra ha sido realizada con exito!</p>
         )}
       </div>
     </div>

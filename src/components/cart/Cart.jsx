@@ -1,14 +1,18 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CartContext from '../../contexts/CartContext';
 import CheckoutForm from './CheckoutForm';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, Timestamp } from 'firebase/firestore';
 
 const Cart = () => {
   const { products, removeItems, removeItem, clearCart, getCartTotalPrice } =
     useContext(CartContext);
 
+  const navigate = useNavigate();
+
   const [formOpen, setFormOpen] = useState(false);
+  const [orderSent, setOrderSent] = useState(false);
+  const [orderId, setOrderId] = useState('');
 
   const handleRemoveItem = (id) => {
     removeItems(id);
@@ -22,6 +26,11 @@ const Cart = () => {
     clearCart();
   };
 
+  const resetOrder = () => {
+    setOrderId('');
+    navigate('/');
+  };
+
   const handleGenerateOrder = (formData) => {
     const newOrder = {
       buyer: formData,
@@ -30,13 +39,13 @@ const Cart = () => {
         title: product.name,
         price: product.price,
       })),
+      state: 'generada',
+      date: Timestamp.now(),
       total: products.reduce((acc, product) => acc + product.price * product.quantity, 0),
     };
 
-    // clearCart();
-
     const db = getFirestore();
-    addDoc(collection(db, 'orders'), newOrder);
+    addDoc(collection(db, 'orders'), newOrder).then((data) => setOrderId(data.id));
   };
 
   return (
@@ -139,19 +148,40 @@ const Cart = () => {
               setIsOpen={setFormOpen}
               handleGenerateOrder={handleGenerateOrder}
               clearCart={clearCart}
+              orderSent={orderSent}
+              setOrderSent={setOrderSent}
             />
           </div>
         </>
       ) : (
         <div className='flex flex-col items-center justify-center'>
-          <div className='mt-6 text-lg text-center md:text-2xl'>
-            No se encontraron <strong>juegos</strong> en tu carrito...
-          </div>
-          <Link
-            to='/'
-            className='inline-block p-4 mt-4 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md w-80 text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
-            Ver juegos!
-          </Link>
+          {orderId ? (
+            <>
+              <div className='mt-6 text-sm font-semibold tracking-wider uppercase text-zinc-500'>
+                Resumen de tu orden:
+              </div>
+              <div className='flex items-baseline gap-3 mt-3'>
+                <p className='text-sm text-zinc-600'>Orden:</p>
+                <span className='text-lg font-semibold'>{orderId}</span>
+              </div>
+              <button
+                onClick={resetOrder}
+                className='inline-block p-4 mt-8 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md w-80 text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
+                Volver al inicio
+              </button>
+            </>
+          ) : (
+            <>
+              <div className='mt-6 text-lg text-center md:text-2xl'>
+                No se encontraron <strong>juegos</strong> en tu carrito...
+              </div>
+              <Link
+                to='/'
+                className='inline-block p-4 mt-4 text-sm font-extrabold tracking-wider text-center uppercase transition border-2 border-transparent rounded-md w-80 text-zinc-800 bg-sky-600 hover:bg-zinc-900 hover:text-sky-500 hover:border-sky-500'>
+                Ver juegos!
+              </Link>
+            </>
+          )}
         </div>
       )}
     </div>
